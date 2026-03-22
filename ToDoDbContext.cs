@@ -15,6 +15,7 @@ public partial class ToDoDbContext : DbContext
     {
     }
 
+    // הגדרת הטבלאות במסד הנתונים
     public virtual DbSet<Item> Items { get; set; }
     public virtual DbSet<User> Users { get; set; } 
 
@@ -22,6 +23,7 @@ public partial class ToDoDbContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
+            // כאן המערכת תשתמש במחרוזת החיבור שהגדרנו ב-Render
              optionsBuilder.UseMySql("name=ToDoDB", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.45-mysql"));
         }
     }
