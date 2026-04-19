@@ -196,10 +196,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("https://todolist-client-zyi1.onrender.com") // הכתובת המדויקת של הקליינט שלך
+        policy.WithOrigins("https://todolist-client-zyi1.onrender.com")
               .AllowAnyMethod()
               .AllowAnyHeader()
-              .AllowCredentials(); // מאפשר שליחת טוקנים ופרטי זיהוי
+              .AllowCredentials();
     });
 });
 
