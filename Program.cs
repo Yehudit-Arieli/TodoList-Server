@@ -192,15 +192,15 @@ builder.Services.AddDbContext<ToDoDbContext>(options =>
 //                .AllowAnyMethod()
 //                .AllowAnyHeader());
 // });
-// הגדרת CORS: מאפשר לקליינט הספציפי שלך לגשת לשרת
+// הגדרת CORS מתוקנת: מאפשרת לאתר הקליינט שלך לדבר עם השרת
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("https://todolist-client-zyi1.onrender.com") // הכתובת של האתר שלך
+        policy.WithOrigins("https://todolist-client-zyi1.onrender.com") // כתובת הקליינט שלך
               .AllowAnyMethod()
               .AllowAnyHeader()
-              .AllowCredentials(); // חשוב מאוד כששולחים טוקן
+              .AllowCredentials(); // מאפשר שליחת טוקן אבטחה
     });
 });
 
