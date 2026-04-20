@@ -185,23 +185,23 @@ builder.Services.AddDbContext<ToDoDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // // הגדרת CORS: מאפשר לאתרים חיצוניים (כמו ה-Frontend) לשלוח בקשות ל-API הזה
-// builder.Services.AddCors(options =>
-// {
-//     options.AddPolicy("AllowAll", policy =>
-//         policy.AllowAnyOrigin()
-//                .AllowAnyMethod()
-//                .AllowAnyHeader());
-// });
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
-    {
-        policy.WithOrigins("https://todolist-client-zyi1.onrender.com")
-              .AllowAnyMethod()
-              .AllowAnyHeader()
-              .AllowCredentials();
-    });
+        policy.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
 });
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy("AllowAll", policy =>
+//     {
+//         policy.WithOrigins("https://todolist-client-zyi1.onrender.com")
+//               .AllowAnyMethod()
+//               .AllowAnyHeader()
+//               .AllowCredentials();
+//     });
+// });
 
 // --- 3. הגדרות Swagger (תיעוד ה-API) ---
 
